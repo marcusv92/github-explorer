@@ -22,7 +22,7 @@ Para usar a aplicação é necessário ter instalado em sua máquina:
 
 ### 1. inicie o projeto
 
-'''yarn start'''
+```yarn start```
 
 ### 2. Acesse a aplicação em seu navegador, digitando a URL http://localhost:3000.
 
