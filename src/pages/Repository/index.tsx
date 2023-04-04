@@ -6,6 +6,7 @@ import api from '../../services/api';
 import logo from '../../assets/logo.svg';
 import { Header, RepositoryInfo, Issues } from './styles';
 
+// Interfaces utilizadas pelo componente Repository
 interface RepositoryParams {
   repository: string;
 }
@@ -32,11 +33,14 @@ interface Issue {
 }
 
 const Repository: React.FC = () => {
+  // Declaração dos estados locais
   const [repository, setRepository] = useState<Repository | null>(null);
   const [issues, setIssues] = useState<Issue[]>([]);
 
+  // Obtenção dos parâmetros de rota
   const { params } = useRouteMatch<RepositoryParams>();
 
+   // Busca as informações do repositório e das issues correspondentes na API do Github
   useEffect(() => {
     api.get(`repos/${params.repository}`).then(response => {
       setRepository(response.data);
@@ -49,6 +53,7 @@ const Repository: React.FC = () => {
 
   return (
     <>
+      // Cabeçalho do componente
       <Header>
         <img src={logo} alt="github-explorer" />
         <Link to="/">
@@ -57,6 +62,7 @@ const Repository: React.FC = () => {
         </Link>
       </Header>
 
+      // Renderiza informações do repositório se o estado local repository estiver preenchido
       {repository && (
         <RepositoryInfo>
           <header>
@@ -87,6 +93,7 @@ const Repository: React.FC = () => {
       )}
 
       <Issues>
+        // Map das issues
         {issues.map(issue => (
           <a key={issue.id} href={issue.html_url}>
             <div>
