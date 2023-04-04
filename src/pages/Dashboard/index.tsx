@@ -83,11 +83,11 @@ const Dashboard: React.FC = () => {
         <button type="submit">Pesquisar</button>
       </Form>
 
-      //Se houver erro de input, exibe mensagem de erro
+      {/*Se houver erro de input, exibe mensagem de erro*/}
       {inputError && <Error>{inputError}</Error>}
 
       <Repositories>
-        // Mapeia repositórios
+        {/*Mapeia repositórios*/}
         {repositories.map(repository => (
           <Link
             key={repository.full_name}
