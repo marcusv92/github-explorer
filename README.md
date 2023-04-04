@@ -42,3 +42,4 @@ Para usar a aplicação é necessário ter instalado em sua máquina:
 ## Princiáis dificuldades
 
 ### Relembrar a sintaxe utilizada durante o desenvolvimento do projeto, com destaque para Typesrcipt
+### Estruturação e segmentação dos diretórios e scripts 
