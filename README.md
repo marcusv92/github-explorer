@@ -38,3 +38,7 @@ Para usar a aplicação é necessário ter instalado em sua máquina:
 - Typescript
 - Styled Components
 - Axios
+
+## Princiáis dificuldades
+
+### Relembrar a sintaxe utilizada durante o desenvolvimento do projeto, com destaque para Typesrcipt
