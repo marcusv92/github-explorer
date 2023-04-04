@@ -14,7 +14,7 @@ Para usar a aplicação é necessário ter instalado em sua máquina:
 
 ### 1. Clone o repositório
 
-'''git clone https://github.com/marcusv92/github-explorer.git'''
+```git clone https://github.com/marcusv92/github-explorer.git```
 
 ### 2. Instale as dependências:
 
