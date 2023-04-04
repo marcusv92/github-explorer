@@ -62,7 +62,7 @@ const Repository: React.FC = () => {
         </Link>
       </Header>
 
-      // Renderiza informações do repositório se o estado local repository estiver preenchido
+      {/*Renderiza informações do repositório se o estado local repository estiver preenchido*/}
       {repository && (
         <RepositoryInfo>
           <header>
@@ -93,7 +93,7 @@ const Repository: React.FC = () => {
       )}
 
       <Issues>
-        // Map das issues
+        {/*Map das issues*/}
         {issues.map(issue => (
           <a key={issue.id} href={issue.html_url}>
             <div>
