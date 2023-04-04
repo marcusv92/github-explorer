@@ -1,12 +1,16 @@
+// Importação de módulos necessários para a construção da página.
 import React, { useState, useEffect, FormEvent } from 'react';
 import { FiChevronRight } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
+// Importação do serviço de API.
 import api from '../../services/api';
 
+// Importação de imagens e estilos.
 import logo from '../../assets/logo.svg';
 
 import { Title, Form, Repositories, Error } from './styles';
 
+// Definição da interface para os objetos de repositórios.
 interface Repository {
   full_name: string;
   description: string;
@@ -16,9 +20,12 @@ interface Repository {
   };
 }
 
+// Definição da interface para os objetos de repositórios.
 const Dashboard: React.FC = () => {
+  // Declaração de estado para armazenar o nome do repositório digitado pelo usuário.
   const [newRepo, setNewRepo] = useState('');
   const [inputError, setInputError] = useState('');
+  // Declaração de estado para armazenar a lista de repositórios.
   const [repositories, setRepositories] = useState<Repository[]>(() => {
     const storageRepositories = localStorage.getItem(
       '@github-explorer:repositories',
@@ -38,6 +45,7 @@ const Dashboard: React.FC = () => {
     );
   }, [repositories]);
 
+  // Função executada quando o formulário é enviado.  
   async function handleAddRepository(
     event: FormEvent<HTMLFormElement>,
   ): Promise<void> {
@@ -75,9 +83,11 @@ const Dashboard: React.FC = () => {
         <button type="submit">Pesquisar</button>
       </Form>
 
+      //Se houver erro de input, exibe mensagem de erro
       {inputError && <Error>{inputError}</Error>}
 
       <Repositories>
+        // Mapeia repositórios
         {repositories.map(repository => (
           <Link
             key={repository.full_name}
